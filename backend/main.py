@@ -3,6 +3,7 @@ import requests
 import os
 from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
+from apiFormat import Movie
 
 load_dotenv()
 
@@ -18,11 +19,11 @@ app.add_middleware(
 API_KEY = os.getenv("APIKEY")
 
 requestUrl = f"http://www.omdbapi.com/?t="
-print(requestUrl)
 @app.get("/getMovie")
 def get_movie(movie_name: str):
     response = requests.get(f"{requestUrl}{movie_name}&apikey={API_KEY}")
-    return response.json()
+    filered_response = Movie.from_json(response.text)
+    return filered_response
     
 
 

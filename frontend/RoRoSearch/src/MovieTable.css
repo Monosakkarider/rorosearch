@@ -1,0 +1,14 @@
+.movie-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .movie-table th,
+  .movie-table td {
+    padding: 12px; /* Adjust padding as needed */
+    border: 1px solid #ddd; /* Optional: adds a border */
+  }
+  
+  .movie-table thead {
+    background-color: #f2f2f2; /* Optional: styles the header */
+  }
