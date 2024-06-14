@@ -16,15 +16,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-API_KEY = os.getenv("OMDBAPIKEY")
+OMDB_API_KEY = os.getenv("OMDBAPIKEY")
 
-requestUrl = f"http://www.omdbapi.com/?t="
+omdbRequestUrl = f"http://www.omdbapi.com/?t="
 @app.get("/getMovie")
 def get_movie(movie_name: str):
-    response = requests.get(f"{requestUrl}{movie_name}&apikey={API_KEY}")
+    response = requests.get(f"{omdbRequestUrl}{movie_name}&apikey={OMDB_API_KEY}")
     filtered_response = Movie.from_json(response.text)
     return filtered_response
     
-
-
-

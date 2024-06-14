@@ -3,6 +3,9 @@ import { useEffect, useRef, useState } from 'react'
 
 const MovieTable = ({ movies }) => {
     function calculateTime(runtime) {
+        if (runtime === "N/A"){
+            runtime = "0"
+        }
         let num= parseInt(runtime)
         setCalculatedTime(calculatedTime + num)
         
