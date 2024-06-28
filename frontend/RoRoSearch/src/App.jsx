@@ -42,8 +42,8 @@ function App() {
   return (
     <>
       <div>
-        <h1>RoRo Search Ma'fakka..</h1>
-        <input type="text" placeholder="HERE!!!! u blind fuck" value={movieTitle} onChange={(e) => setMovieTitle(e.target.value)} />
+        <h1>RoRo Search..</h1>
+        <input type="text" placeholder="" value={movieTitle} onChange={(e) => setMovieTitle(e.target.value)} />
         <button ref={buttonRef} onClick={() => searchMovie(movieTitle)}>
           Search
         </button>
